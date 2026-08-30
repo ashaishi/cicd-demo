@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return {
-        "application": "CI/CD Demo",
+        "application": "CI/CD Demo - Jenkins v2",
         "status": "running",
         "environment": os.getenv("ENVIRONMENT", "local")
     }
