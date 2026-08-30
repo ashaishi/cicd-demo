@@ -13,14 +13,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing application...'
-                sh 'test -f index.html'
+                sh 'test -f app/app.py'
             }
         }
 
-        stage('Deploy') {
+        stage('Docker Build') {
             steps {
-                echo 'Deploying application...'
-                echo 'Deployment successful!'
+                echo 'Building Docker image...'
+                sh 'docker build -t cicd-demo:${BUILD_NUMBER} .'
             }
         }
     }
